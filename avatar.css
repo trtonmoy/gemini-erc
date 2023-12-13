@@ -1,0 +1,22 @@
+body {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				height: 100vh;
+				margin: 0;
+			}
+
+			#canvas {
+				border: 1px solid #ccc;
+				border-radius: 50%;
+				width: 640px;
+				height: 640px;
+				margin-bottom: 20px;
+			}
+
+			#imageInput,
+			#downloadButton {
+				margin-bottom: 20px;
+			}
+			

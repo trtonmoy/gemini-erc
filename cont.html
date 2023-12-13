@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>AI AVATAR</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.11/dist/interact.min.js"></script>
+
+		<style>
+			body {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				height: 100vh;
+				margin: 0;
+			}
+
+			#canvas {
+				border: 1px solid #ccc;
+				border-radius: 50%;
+				width: 640px;
+				height: 640px;
+				margin-bottom: 20px;
+			}
+
+			.container {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+			#imageInput {
+				display: none;
+			}
+
+			.custom-file-input {
+				position: relative;
+				overflow: hidden;
+				cursor: pointer;
+				border: 1px solid black;
+				background-color: #181818;
+				border-radius: 44px;
+				display: inline-block;
+				transition: color 0.5s;
+			}
+
+			.custom-file-input .text {
+				display: block;
+				padding: 16px;
+				font-size: 15px;
+				text-transform: uppercase;
+				font-weight: bold;
+				color: #2196f3;
+				background: linear-gradient(
+					to right,
+					#181818 0%,
+					#181818 50%,
+					#2196f3 50%,
+					#2196f3 100%
+				);
+				background-size: 200% 100%;
+				transition: background-position 0.5s, color 0.5s;
+			}
+
+			.custom-file-input:hover .text {
+				color: #181818;
+				background-position: -100% 0;
+			}
+
+			.custom-file-input:active .text {
+				color: #181818;
+				background-position: -100% 0;
+			}
+
+			#downloadButton {
+				position: relative;
+				overflow: hidden;
+				cursor: pointer;
+				font-weight: bold;
+				border: none;
+				background: none;
+			}
+
+			#downloadButton .text {
+				display: block;
+				padding: 18px;
+				font-size: 15px;
+				text-transform: uppercase;
+				border: 1px solid #181818;
+				border-radius: 44px;
+				color: #2196f3;
+				background: linear-gradient(
+					to right,
+					#181818 0%,
+					#181818 50%,
+					#2196f3 50%,
+					#2196f3 100%
+				);
+				background-size: 200% 100%;
+				transition: background-position 0.5s, color 0.5s;
+			}
+
+			#downloadButton:hover .text {
+				background-position: -100% 0;
+				color: #181818;
+			}
+
+			* {
+				font-family: sans-serif;
+			}
+			.nothing {
+				width: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+	    
+	    
+	    
+		<canvas id="canvas" width="640" height="640"></canvas>
+		<div class="container">
+			<label for="imageInput" class="custom-file-input">
+				<span class="text">UPLOAD</span>
+				<input type="file" id="imageInput" class="input" accept="image/*" />
+			</label>
+
+			<div class="nothing"></div>
+			<button class="animatedButton" id="downloadButton">
+				<span class="text">DOWNLOAD</span>
+			</button>
+		</div>
+
+
+
+
+
+		<script>
+			document
+				.getElementById('imageInput')
+				.addEventListener('change', handleImage)
+
+			function handleImage(e) {
+				const canvas = new fabric.Canvas('canvas', {
+					width: 640,
+					height: 640,
+					selection: false,
+				})
+
+				const reader = new FileReader()
+
+				reader.onload = function (event) {
+					const img = new Image()
+					img.onload = function () {
+						const fabricImg = new fabric.Image(img, {
+							width: img.width,
+							height: img.height,
+							left: (canvas.width - img.width) / 2,
+							top: (canvas.height - img.height) / 2,
+							selectable: true,
+						})
+
+						fabricImg.set({
+							class: 'rounded-image',
+							borderColor: '#ccc',
+							cornerColor: '#ccc',
+							cornerSize: 10,
+							transparentCorners: false,
+						})
+
+						
+						fabric.Image.fromURL('1.png', function (fabricFrame) {
+							fabricFrame.set({
+								width: canvas.width,
+								height: canvas.height,
+								selectable: false,
+								lockMovementX: true,
+								lockMovementY: true,
+								lockScaling: true,
+							})
+
+							
+							fabricFrame.set({
+								clipTo: function (ctx) {
+									ctx.arc(
+										canvas.width / 2,
+										canvas.height / 2,
+										canvas.width / 2,
+										0,
+										2 * Math.PI
+									)
+								},
+							})
+
+							
+							const group = new fabric.Group([fabricFrame, fabricImg], {
+								selectable: true,
+							})
+
+							
+							canvas.add(group)
+
+							
+							canvas.renderAll()
+						})
+					}
+					img.src = event.target.result
+				}
+
+				reader.readAsDataURL(e.target.files[0])
+			}
+
+			document
+				.getElementById('downloadButton')
+				.addEventListener('click', function () {
+					const canvas = document.getElementById('canvas')
+					const imageDataUrl = getTrimmedCanvasDataURL(canvas)
+					const downloadLink = document.createElement('a')
+					downloadLink.href = imageDataUrl
+					downloadLink.download = 'avatar.png'
+					document.body.appendChild(downloadLink)
+					downloadLink.click()
+					document.body.removeChild(downloadLink)
+				})
+
+			function getTrimmedCanvasDataURL(canvas) {
+				const diameter = 640
+				const context = canvas.getContext('2d')
+				const imageData = context.getImageData(
+					0,
+					0,
+					canvas.width,
+					canvas.height
+				)
+
+				
+				let minX = canvas.width
+				let minY = canvas.height
+				let maxX = 0
+				let maxY = 0
+
+				for (let y = 0; y < canvas.height; y++) {
+					for (let x = 0; x < canvas.width; x++) {
+						const alpha = imageData.data[(y * canvas.width + x) * 4 + 3]
+						if (alpha > 0) {
+							minX = Math.min(minX, x)
+							minY = Math.min(minY, y)
+							maxX = Math.max(maxX, x)
+							maxY = Math.max(maxY, y)
+						}
+					}
+				}
+
+				
+				const trimmedCanvas = document.createElement('canvas')
+				trimmedCanvas.width = diameter
+				trimmedCanvas.height = diameter
+				const trimmedContext = trimmedCanvas.getContext('2d')
+
+				
+				trimmedContext.beginPath()
+				trimmedContext.arc(
+					diameter / 2,
+					diameter / 2,
+					diameter / 2,
+					0,
+					2 * Math.PI
+				)
+				trimmedContext.closePath()
+				trimmedContext.clip()
+				trimmedContext.drawImage(
+					canvas,
+					minX,
+					minY,
+					maxX - minX + 1,
+					maxY - minY + 1,
+					0,
+					0,
+					diameter,
+					diameter
+				)
+
+				
+				const frameImage = new Image()
+				frameImage.src = '1.png'
+				trimmedContext.drawImage(frameImage, 0, 0, diameter, diameter)
+
+				return trimmedCanvas.toDataURL('image/png')
+			}
+		</script>
+	</body>
+</html>

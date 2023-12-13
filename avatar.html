@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="/GEMINI_LOGO.png" type="image/x-icon">
+    <!-- #title -->
+    <title>GeminiAiProject - Ethereum ERC20 Community Fan Token</title>
+    <!-- #keywords -->
+    <meta name="keywords" content="creative, agency, portfolio">
+    <!-- #description -->
+    <meta name="description" content="#">
+    <!-- ==== css dependencies start ==== -->
+    <!-- bootstrap five css -->
+    <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- glyphter css -->
+    <link rel="stylesheet" href="/assets/vendor/glyyphter/css/xpovio.css">
+    <!-- font awesome six css -->
+    <link rel="stylesheet" href="/assets/vendor/font-awesome/css/all.css">
+    <!-- nice select css -->
+    <link rel="stylesheet" href="/assets/vendor/nice-select/css/nice-select.css">
+    <!-- magnific popup css -->
+    <link rel="stylesheet" href="/assets/vendor/magnific-popup/css/magnific-popup.css">
+    <!-- slick css -->
+    <link rel="stylesheet" href="/assets/vendor/slick/css/slick.css">
+    <!-- ==== / css dependencies end ==== -->
+    <!-- main css -->
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.11/dist/interact.min.js"></script>
+  </head>
+
+  <body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <div class="my-app">
+      <!-- ==== preloader start ==== -->
+      <div id="preloader">
+        <div id="loader"></div>
+      </div>
+      <!-- ==== / preloader end ==== -->
+      <!-- ==== mouse cursor drag start ==== -->
+      <div class="mouseCursor cursor-outer"></div>
+      <div class="mouseCursor cursor-inner">
+        <span>Drag</span>
+      </div>
+      <!-- ==== / mouse cursor drag end ==== -->
+      <!-- ==== header start ==== -->
+      <header class="header">
+        <div class="primary-navbar cmn-nav">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <nav class="navbar p-0">
+                  <div class="navbar__logo">
+                    <a href="#" aria-label="go to home">
+                      <img src="/GEMINI_LOGO.png" alt="Image" style="width: 80px">GEMINI AI
+                    </a>
+                  </div>
+                  <div class="navbar__menu">
+                    <ul class="navbar__list">
+                      <li class="navbar__item navbar__item--has-children nav-fade">
+                        <a href="https://www.dextools.io/app/en/ether/pair-explorer/0xb954562066c71b3e6e7b2ac330b03c74c0dcd5ae"  target="_blank" aria-label="dropdown menu">Dextools  <i class="fa-sharp fa-solid fa-arrow-up-right"></i></a>
+                      </li>
+                      <li class="navbar__item navbar__item--has-children nav-fade">
+                        <a href="https://dexscreener.com/ethereum/0xb954562066c71b3e6e7b2ac330b03c74c0dcd5ae"  target="_blank" aria-label="dropdown menu">Dexscreener  <i class="fa-sharp fa-solid fa-arrow-up-right"></i></a>
+                      </li>
+
+                      <li class="navbar__item navbar__item--has-children nav-fade">
+                        <a href="https://twitter.com/Geminaierc"  target="_blank" aria-label="dropdown menu">Twitter  <i class="fa-sharp fa-solid fa-arrow-up-right"></i> </a>
+                      </li>
+                       <li class="navbar__item navbar__item--has-children nav-fade">
+                        <a href="mailto:geminierc20@outlook.com"  target="_blank" aria-label="dropdown menu">Contact us  <i class="fa-sharp fa-solid fa-arrow-up-right"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="navbar__options">
+                    <div class="navbar__mobile-options d-none d-sm-flex">
+                      <a href="https://t.me/geminirevival" target="_blank" class="btn btn--secondary">Community  <i class="fa-sharp fa-solid fa-arrow-up-right"></i></a>
+                    </div>
+                    <button class="open-mobile-menu d-flex d-xl-none" aria-label="toggle mobile menu">
+                      <i class="fa-light fa-bars-staggered"></i>
+                    </button>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <!-- ==== mobile menu start ==== -->
+          <div class="mobile-menu">
+            <nav class="mobile-menu__wrapper">
+              <div class="mobile-menu__header nav-fade">
+                <div class="logo">
+                  <a href="">
+                    <img src="/GEMINI_LOGO.png" alt="" title="" style="width: 80px">GEMINI AI
+                  </a>
+                </div>
+                <button aria-label="close mobile menu" class="close-mobile-menu">
+                  <i class="fa-light fa-xmark-large"></i>
+                </button>
+              </div>
+              <div class="mobile-menu__list"></div>
+              <div class="mobile-menu__options d-flex d-sm-none justify-content-center nav-fade"></div>
+            </nav>
+          </div>
+          <div class="mobile-menu__backdrop"></div>
+          <!-- ==== / mobile menu end ==== -->
+        </div>
+      </header>
+      <!-- ==== / header end ==== -->
+      <div id="smooth-wrapper">
+        <div id="smooth-content">
+          <!-- ==== main start ==== -->
+          <main>
+            <!-- ==== banner start ==== -->
+            <section class="banner-two" data-background="/wallhere.jpg">
+              <div class="container">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="banner-two-inner">
+                      <div class="banner-two__content">
+                        <h1 class="title-anim">
+                           
+                          <span>GEMINI AI</span>
+                          AVATAR GENERATOR
+                          <br><br><br><br>
+                        </h1>
+                        
+                        
+                        <iframe
+			src="cont.html"
+			width="840"
+			height="840"
+			frameborder="0"
+			scrolling="no"
+			style="overflow: hidden"
+			bottom="88px"
+		></iframe> 
+		
+<center><span class="text"><font color="white">	Pic can be moved, zoomed in/out inside workspace (circle). Your media file must cover entire workspace (circle),  otherwise it will stretch or shrink depending on size of your image.
+<br><br>
+If you want make another, reload page please.
+</font></span></center>
+		
+                        <div class="banner-two__content-cta section__content-cta">
+                          <div class="paragraph">
+                             
+                             
+                            <!--<p>-->
+                            <!--  Join the GEMINI AI, learn, earn and ride the-->
+                            <!--  surging AI. Follow GOOGLE and their upcoming-->
+                            <!--  launches - the AI mission.-->
+                            <!--  <br>-->
+                            <!--  <br>-->
+                            <!-- Gemini is the result of large-scale collaborative efforts by teams across Google, including our colleagues at Google Research. It was built from the ground up to be multimodal, which means it can generalize and seamlessly understand, operate across and combine different types of information including text, code, audio, image and video.-->
+                            <!--</p>-->
+                          </div>
+                          <div class="cta">
+                            <!--<a href="https://app.uniswap.org/#/swap?outputCurrency=0xb954562066c71b3e6e7b2ac330b03c74c0dcd5ae" class="btn btn--tertiary">-->
+                            <!--  BUY ON UNISWAP-->
+                            <!--  <i class="fa-sharp fa-solid fa-arrow-up-right"></i>-->
+                            <!--</a>-->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <img src="/assets/images/banner/dawn.png" alt="Image" class="dawn">
+            </section>
+            <!-- ==== / banner end ==== -->
+            <!-- ==== sponsor start ==== -->
+
+            <!-- ==== / sponsor end ==== -->
+            <!-- ==== award start ==== -->
+            <section class="section award">
+              <div class="container">
+                <div class="row gaper align-items-center">
+                  <div class="col-12 col-lg-6">
+                    <div class="award__thumb dir-rtl">
+                      <video controls="" width="100%" autoplay="">
+                        <source src="gemini%20ai.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-6 col-xxl-5 offset-xxl-1">
+                    <div class="award__content section__content">
+                      <span class="sub-title">
+                        Token details
+                        <i class="fa-solid fa-arrow-right"></i>
+                      </span>
+                      <h2 class="title title-anim">
+                        Discover Our
+                        <span>Tokenomics</span>
+                      </h2>
+                      <div class="paragraph">
+                        <p>
+                          Google, one of the billion company launching a new AI
+                          rival to Open AI. Never missed the chance to ride the
+                          surging AI. <br><br>
+                          Gemini is a meme coin not affiliated with Google Corp. There is no formal team or roadmap. The token is for entertainment purposes only.
+                          <br><br>
+                          CA: 0xb954562066c71b3e6e7b2ac330b03c74c0dcd5ae
+                          <br><br>
+                          Learn more about our tokenomics below:
+                        </p>
+                      </div>
+                      <div class="award__content-meta">
+                        <div class="single">
+                          <h4>690B</h4>
+                          <h4>Total Supply</h4>
+                          <!--                                    <p>Website of the day</p>-->
+                        </div>
+                        <div class="single">
+                          <h4>0%</h4>
+                          <h4>Buy Tax</h4>
+                        </div>
+                        <div class="single">
+                          <h4>0%</h4>
+                          <h4>Sell Tax</h4>
+                        </div>
+                      </div>
+                      <div class="section__content-cta">
+                        <a href="https://etherscan.io/token/0xb954562066c71b3e6e7b2ac330b03c74c0dcd5ae" class="btn btn--primary">Check on Etherscan</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <img src="/assets/images/star.png" alt="Image" class="star">
+              <img src="/assets/images/star.png" alt="Image" class="star-two">
+              <img src="/assets/images/agency/dot-large.png" alt="Image" class="dot">
+              <img src="/assets/images/agency/dot-large.png" alt="Image" class="dot-two">
+            </section>
+            <!-- ==== / award end ==== -->
+            <!-- ==== offer start ==== -->
+
+            <!-- ==== / offer end ==== -->
+            <!-- ==== video modal start ==== -->
+
+            <!-- ==== / video modal end ==== -->
+            <!-- ==== portfolio start ==== -->
+            <section class="section portfolio portfolio-two portfolio-filter fade-wrapper">
+              <div class="portfolio__text-slider">
+                <div class="portfolio__text-slider-single">
+                  <h2 class="h1">
+                    <a href="#">
+                      GEMINI AI($GEMINI)
+                      <i class="fa-sharp fa-solid fa-arrow-down-right"></i>
+                    </a>
+                  </h2>
+                </div>
+                <div class="portfolio__text-slider-single">
+                  <h2 class="h1">
+                    <a href="#">
+                      GEMINI AI($GEMINI)
+                      <i class="fa-sharp fa-solid fa-arrow-down-right"></i>
+                    </a>
+                  </h2>
+                </div>
+                <div class="portfolio__text-slider-single">
+                  <h2 class="h1">
+                    <a href="#">
+                      GEMINI AI($GEMINI)
+                      <i class="fa-sharp fa-solid fa-arrow-down-right"></i>
+                    </a>
+                  </h2>
+                </div>
+                <div class="portfolio__text-slider-single">
+                  <h2 class="h1">
+                    <a href="#">
+                      GEMINI AI($GEMINI)
+                      <i class="fa-sharp fa-solid fa-arrow-down-right"></i>
+                    </a>
+                  </h2>
+                </div>
+                <div class="portfolio__text-slider-single">
+                  <h2 class="h1">
+                    <a href="#">
+                      GEMINI AI($GEMINI)
+                      <i class="fa-sharp fa-solid fa-arrow-down-right"></i>
+                    </a>
+                  </h2>
+                </div>
+                <div class="portfolio__text-slider-single">
+                  <h2 class="h1">
+                    <a href="#">
+                      GEMINI AI($GEMINI)
+                      <i class="fa-sharp fa-solid fa-arrow-down-right"></i>
+                    </a>
+                  </h2>
+                </div>
+                <div class="portfolio__text-slider-single">
+                  <h2 class="h1">
+                    <a href="#">
+                      GEMINI AI($GEMINI)
+                      <i class="fa-sharp fa-solid fa-arrow-down-right"></i>
+                    </a>
+                  </h2>
+                </div>
+              </div>
+            </section>
+            <!-- ==== / portfolio end ==== -->
+            <!-- ==== testimonial start ==== -->
+
+            <!-- ==== / testimonial end ==== -->
+            <!-- ==== blog start ==== -->
+
+            <!-- ==== / blog end ==== -->
+            <!-- ==== cta start ==== -->
+
+            <!-- ==== / cta end ==== -->
+            <!-- ==== next page start ==== -->
+
+            <!-- ==== / next page end ==== -->
+          </main>
+          <!-- ==== / main end ==== -->
+          <!-- ==== footer start ==== -->
+          <footer class="footer-two section pb-0">
+            <div class="container">
+              <div class="row gaper">
+                <div class="col-12 col-lg-5 col-xl-4">
+                  <div class="footer-two__left">
+                    <div class="logo">
+                      <a href="">
+                        <img src="/GEMINI_LOGO.png" alt="Image" style="width: 50px">GEMINI
+                      </a>
+                    </div>
+                    <div class="paragraph">
+                      <p>
+                        Join our awesome community and learn more about the
+                        project's goal and milestones. <br>
+                        
+                        Any queries: geminierc20@outlook.com
+                      </p>
+                    </div>
+                    <!-- <div class="section__content-cta">
+                      <h2>
+                        <a
+                          href="mailto:info@domain.pro"
+                          class="folks-text"
+                          style="font-size: 30px"
+                          >info@domain.pro</a
+                        >
+                      </h2>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="col-12 col-lg-7 col-xl-7 offset-xl-1 col-xxl-5 offset-xxl-3">
+                  <div class="footer-two__right">
+                    <div class="social justify-content-start justify-content-lg-start">
+                      <a href="https://twitter.com/Geminaierc" target="_blank">
+                        <i class="fa-brands fa-twitter"></i>
+                        <span>Twitter </span>
+                      </a>
+
+                      <a href="https://t.me/geminirevival" target="_blank">
+                        <i class="fa-brands fa-telegram-plane"></i>
+                        <span>Telegram</span>
+                        
+                         <a href="mailto:geminierc20@outlook.com">
+                        <i class="fa-brands "></i>
+                        <span>Contact us</span>
+                       
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer__copyright">
+              <div class="container">
+                <div class="row align-items-center gaper">
+                  <div class="col-12 col-xl-6">
+                    <div class="footer__copyright-text text-center text-xl-start">
+                      <p>
+                        Copyright &copy;
+                        <span id="copyYear"></span>
+
+                        <a href="#" target="_blank">GEMINI AI -</a>
+                         Made with ♥ by beloved investors. <br>
+                         Gemini is a meme coin not affiliated with Google Corp. There is no formal team or roadmap. The token is for entertainment purposes only.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-12 col-xl-6"></div>
+                </div>
+              </div>
+            </div>
+          </footer>
+          <!-- ==== / footer end ==== -->
+        </div>
+      </div>
+      <!-- ==== scroll to top start ==== -->
+      <!--<button-->
+      <!--  class="progress-wrap"-->
+      <!--  aria-label="scroll indicator"-->
+      <!--  title="go to top"-->
+      <!-->-->
+      <!--  <span></span>-->
+      <!--  <svg-->
+      <!--    class="progress-circle svg-content"-->
+      <!--    width="100%"-->
+      <!--    height="100%"-->
+      <!--    viewBox="-1 -1 102 102"-->
+      <!--  >-->
+      <!--    <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />-->
+      <!--  </svg>-->
+      <!--</button>-->
+      <!-- ==== / scroll to top end ==== -->
+      <!-- video modal -->
+    </div>
+    <!-- ==== js dependencies start ==== -->
+    <!-- jquery -->
+    <script src="/assets/vendor/jquery/jquery-3.7.0.min.js"></script>
+    <!-- bootstrap five js -->
+    <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- nice select js -->
+    <script src="/assets/vendor/nice-select/js/jquery.nice-select.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="/assets/vendor/magnific-popup/js/jquery.magnific-popup.min.js"></script>
+    <!-- slick js -->
+    <script src="/assets/vendor/slick/js/slick.min.js"></script>
+    <!-- image loaded js -->
+    <script src="/assets/vendor/images-loaded/imagesloaded.pkgd.min.js"></script>
+    <!-- isotope js -->
+    <script src="/assets/vendor/isotope/isotope.pkgd.min.js"></script>
+    <!-- chroma js -->
+    <script src="/assets/vendor/gsap/chroma.min.js"></script>
+    <!-- splittext js -->
+    <script src="/assets/vendor/gsap/SplitText.min.js"></script>
+    <!-- scrollsmoother js -->
+    <script src="/assets/vendor/gsap/ScrollSmoother.min.js"></script>
+    <!-- scrollto js -->
+    <script src="/assets/vendor/gsap/ScrollToPlugin.min.js"></script>
+    <!-- scrolltrigger js -->
+    <script src="/assets/vendor/gsap/ScrollTrigger.min.js"></script>
+    <!-- gsap js -->
+    <script src="/assets/vendor/gsap/gsap.min.js"></script>
+    <!-- vanilla tilt js -->
+    <script src="/assets/vendor/vanilla-tilt/tilt.jquery.js"></script>
+    <!-- ==== / js dependencies end ==== -->
+    <!-- plugins js -->
+    <script src="/assets/js/plugins.js"></script>
+    <!-- main js -->
+    <script src="/assets/js/main.js"></script>
+  </body>
+
+  <!-- Mirrored from geminiai-coin.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Nov 2023 08:11:10 GMT -->
+</html>
